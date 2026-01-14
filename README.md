@@ -2,7 +2,7 @@
 
 A Model Context Protocol (MCP) server for PDF Gen Studio - Generate PDFs and images from templates, JSON, HTML, or URLs.
 
-[![npm version](https://badge.fury.io/js/%40pdfgenstudio%2Fmcp-server.svg)](https://www.npmjs.com/package/@pdfgenstudio/mcp-server)
+[![npm version](https://badge.fury.io/js/%40pdfgenstudio%2Fmcp.svg)](https://www.npmjs.com/package/@pdfgenstudio/mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -18,19 +18,19 @@ A Model Context Protocol (MCP) server for PDF Gen Studio - Generate PDFs and ima
 ### Using npm (Global)
 
 ```bash
-npm install -g @pdfgenstudio/mcp-server
+npm install -g @pdfgenstudio/mcp
 ```
 
 ### Using npx (No Install)
 
 ```bash
-npx @pdfgenstudio/mcp-server
+npx @pdfgenstudio/mcp
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/pdfgenstudio/pdfgenstudio-mcp.git
+git clone https://github.com/Majid9287/pdfgenstudio-mcp.git
 cd pdfgenstudio-mcp
 npm install
 npm run build
@@ -74,7 +74,7 @@ set PDFGENSTUDIO_API_KEY=your-api-key-here
 pdfgenstudio-mcp
 
 # Using npx
-npx @pdfgenstudio/mcp-server
+npx @pdfgenstudio/mcp
 
 # With explicit transport
 pdfgenstudio-mcp --transport stdio
@@ -121,7 +121,7 @@ Add to your Claude Desktop configuration file:
   "mcpServers": {
     "pdfgenstudio": {
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -169,7 +169,7 @@ Create or edit `.vscode/mcp.json` in your workspace:
   "servers": {
     "pdfgenstudio": {
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -187,7 +187,7 @@ Or add to your VS Code User Settings (`settings.json`):
     "servers": {
       "pdfgenstudio": {
         "command": "npx",
-        "args": ["-y", "@pdfgenstudio/mcp-server"],
+        "args": ["-y", "@pdfgenstudio/mcp"],
         "env": {
           "PDFGENSTUDIO_API_KEY": "your-api-key-here"
         }
@@ -234,7 +234,7 @@ Add the following configuration:
   "mcpServers": {
     "pdfgenstudio": {
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -256,7 +256,7 @@ Add the following configuration:
   "mcpServers": {
     "pdfgenstudio": {
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -284,7 +284,7 @@ Windsurf supports MCP through its configuration.
   "mcpServers": {
     "pdfgenstudio": {
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -309,7 +309,7 @@ Edit `~/.config/zed/settings.json`:
     "mcp_servers": {
       "pdfgenstudio": {
         "command": "npx",
-        "args": ["-y", "@pdfgenstudio/mcp-server"],
+        "args": ["-y", "@pdfgenstudio/mcp"],
         "env": {
           "PDFGENSTUDIO_API_KEY": "your-api-key-here"
         }
@@ -335,7 +335,7 @@ Edit `~/.continue/config.json`:
     {
       "name": "pdfgenstudio",
       "command": "npx",
-      "args": ["-y", "@pdfgenstudio/mcp-server"],
+      "args": ["-y", "@pdfgenstudio/mcp"],
       "env": {
         "PDFGENSTUDIO_API_KEY": "your-api-key-here"
       }
@@ -354,7 +354,7 @@ For clients that support HTTP-based MCP connections:
 
 ```bash
 # Start HTTP server
-npx @pdfgenstudio/mcp-server --transport http --port 3100
+npx @pdfgenstudio/mcp --transport http --port 3100
 ```
 
 #### Endpoints
@@ -409,14 +409,14 @@ await client.connect(transport);
 Run with debug logging:
 
 ```bash
-DEBUG=* npx @pdfgenstudio/mcp-server
+DEBUG=* npx @pdfgenstudio/mcp
 ```
 
 #### Verify Installation
 
 ```bash
 # Test the server directly
-npx @pdfgenstudio/mcp-server --help
+npx @pdfgenstudio/mcp --help
 
 # Test with MCP Inspector
 npx fastmcp inspect /path/to/pdfgenstudio-mcp/src/index.ts
@@ -541,5 +541,5 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - 📚 [Documentation](https://docs.pdfgenstudio.com)
 - 💬 [Discord Community](https://discord.gg/pdfgenstudio)
-- 🐛 [Issue Tracker](https://github.com/pdfgenstudio/pdfgenstudio-mcp/issues)
+- 🐛 [Issue Tracker](https://github.com/Majid9287/pdfgenstudio-mcp/issues)
 - 📧 [Email Support](mailto:support@pdfgenstudio.com)

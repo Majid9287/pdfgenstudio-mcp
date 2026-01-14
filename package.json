@@ -1,6 +1,6 @@
 {
-  "name": "@pdfgenstudio/mcp-server",
-  "version": "1.0.0",
+  "name": "@pdfgenstudio/mcp",
+  "version": "1.0.2",
   "description": "MCP (Model Context Protocol) server for PDF Gen Studio - Generate PDFs and images from templates, JSON, HTML, or URLs",
   "type": "module",
   "main": "dist/index.js",
@@ -37,15 +37,15 @@
     "llm",
     "fastmcp"
   ],
-  "author": "PDF Gen Studio",
+  "author": "Majid9287",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pdfgenstudio/pdfgenstudio-mcp"
+    "url": "https://github.com/Majid9287/pdfgenstudio-mcp"
   },
   "homepage": "https://pdfgenstudio.com",
   "bugs": {
-    "url": "https://github.com/pdfgenstudio/pdfgenstudio-mcp/issues"
+    "url": "https://github.com/Majid9287/pdfgenstudio-mcp/issues"
   },
   "engines": {
     "node": ">=18.0.0"
