@@ -1,0 +1,86 @@
+{
+  "name": "pdfgenstudio",
+  "title": "PDF Gen Studio",
+  "description": "Official PDF Gen Studio MCP Server - Generate PDFs and images from templates, JSON, HTML, or URLs for Cursor, Claude and any LLM clients",
+  "version": "1.0.3",
+  "vendor": "pdfgenstudio",
+  "homepage": "https://pdfgenstudio.com",
+  "documentation": "https://docs.pdfgenstudio.com",
+  "repository": "https://github.com/Majid9287/pdfgenstudio-mcp",
+  "license": "MIT",
+  "icon": "https://github.com/Majid9287/pdfgenstudio-mcp/raw/main/img/pdfgenstudio.svg",
+  "categories": ["productivity", "documents", "pdf", "ai"],
+  "keywords": [
+    "pdf",
+    "pdf-generator",
+    "templates",
+    "html-to-pdf",
+    "screenshot",
+    "documents",
+    "mcp",
+    "ai"
+  ],
+  "docker": {
+    "image": "mcp/pdfgenstudio:latest",
+    "command": [],
+    "args": []
+  },
+  "environment": {
+    "PDFGENSTUDIO_API_KEY": {
+      "description": "Your PDF Gen Studio API key. Get one at https://pdfgenstudio.com",
+      "required": true,
+      "secret": true
+    },
+    "PDFGENSTUDIO_BASE_URL": {
+      "description": "API base URL (optional, for self-hosted instances)",
+      "required": false,
+      "default": "https://api.pdfgenstudio.com"
+    }
+  },
+  "tools": [
+    {
+      "name": "render_template",
+      "description": "Render a saved template to PDF or image with optional dynamic data injection"
+    },
+    {
+      "name": "render_template_image",
+      "description": "Render a template to an image and return it as viewable image content"
+    },
+    {
+      "name": "render_json",
+      "description": "Convert a JSON design document to PDF or image"
+    },
+    {
+      "name": "render_json_image",
+      "description": "Render a JSON document to an image and return it as viewable image content"
+    },
+    {
+      "name": "render_html",
+      "description": "Convert HTML/CSS content to PDF or image"
+    },
+    {
+      "name": "render_html_image",
+      "description": "Render HTML content to an image and return it as viewable image content"
+    },
+    {
+      "name": "render_url",
+      "description": "Screenshot any website URL and convert to PDF or image"
+    },
+    {
+      "name": "render_url_image",
+      "description": "Screenshot a webpage and return it as viewable image content"
+    },
+    {
+      "name": "list_templates",
+      "description": "List all saved templates in your PDF Gen Studio account"
+    },
+    {
+      "name": "get_template",
+      "description": "Get detailed information about a specific template"
+    },
+    {
+      "name": "get_template_schema",
+      "description": "Get the modifiable elements/schema of a template"
+    }
+  ]
+}

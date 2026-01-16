@@ -36,6 +36,18 @@ npm install
 npm run build
 ```
 
+### Using Docker
+
+```bash
+docker pull mcp/pdfgenstudio:latest
+```
+
+Or build locally:
+
+```bash
+docker build -t mcp/pdfgenstudio .
+```
+
 ## Configuration
 
 ### Environment Variables
@@ -147,6 +159,58 @@ Add to your Claude Desktop configuration file:
 ```
 
 After editing, restart Claude Desktop completely.
+
+---
+
+### Docker Desktop (MCP Toolkit)
+
+PDF Gen Studio MCP is available in Docker Desktop's MCP Toolkit catalog.
+
+#### Option 1: Using Docker Desktop MCP Toolkit UI
+
+1. Open Docker Desktop
+2. Go to **Extensions** → **MCP Toolkit**
+3. Search for "pdfgenstudio" in the catalog
+4. Click **Install** and configure your API key
+
+#### Option 2: Manual Configuration
+
+Add to your Claude Desktop configuration to use the Docker image:
+
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "pdfgenstudio": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "PDFGENSTUDIO_API_KEY=your-api-key-here",
+        "mcp/pdfgenstudio:latest"
+      ]
+    }
+  }
+}
+```
+
+#### Running Docker Container Directly
+
+```bash
+# Run in stdio mode (default)
+docker run -i --rm \
+  -e PDFGENSTUDIO_API_KEY="your-api-key-here" \
+  mcp/pdfgenstudio:latest
+
+# Run in HTTP mode
+docker run -p 3100:3100 --rm \
+  -e PDFGENSTUDIO_API_KEY="your-api-key-here" \
+  mcp/pdfgenstudio:latest --transport http --port 3100
+```
 
 ---
 

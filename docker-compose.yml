@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pdfgenstudio-mcp:
+    build: .
+    image: mcp/pdfgenstudio:latest
+    environment:
+      - PDFGENSTUDIO_API_KEY=${PDFGENSTUDIO_API_KEY}
+      - PDFGENSTUDIO_BASE_URL=${PDFGENSTUDIO_BASE_URL:-https://api.pdfgenstudio.com}
+    # For HTTP transport mode, uncomment the following:
+    # command: ["--transport", "http", "--port", "3100"]
+    # ports:
+    #   - "3100:3100"
+    stdin_open: true
+    tty: true
