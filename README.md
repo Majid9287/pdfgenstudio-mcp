@@ -201,15 +201,28 @@ Add to your Claude Desktop configuration to use the Docker image:
 #### Running Docker Container Directly
 
 ```bash
-# Run in stdio mode (default)
-docker run -i --rm \
+# Run in stdio mode (default) - for MCP client integration
+docker run -it --rm \
   -e PDFGENSTUDIO_API_KEY="your-api-key-here" \
   mcp/pdfgenstudio:latest
 
-# Run in HTTP mode
-docker run -p 3100:3100 --rm \
+# Run in HTTP mode - for local development/testing
+docker run -it --rm -p 3100:3100 \
   -e PDFGENSTUDIO_API_KEY="your-api-key-here" \
-  mcp/pdfgenstudio:latest --transport http --port 3100
+  mcp/pdfgenstudio:latest node dist/index.js --transport http --port 3100
+```
+
+#### Using Docker Compose
+
+```bash
+# Create .env file with your API key
+echo "PDFGENSTUDIO_API_KEY=your-api-key-here" > .env
+
+# Run in stdio mode (default)
+docker-compose up -d pdfgenstudio-mcp
+
+# Run in HTTP mode (for local testing)
+docker-compose --profile http up -d pdfgenstudio-mcp-http
 ```
 
 ---

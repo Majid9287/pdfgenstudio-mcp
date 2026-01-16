@@ -1,6 +1,6 @@
 {
   "name": "@pdfgenstudio/mcp",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "MCP (Model Context Protocol) server for PDF Gen Studio - Generate PDFs and images from templates, JSON, HTML, or URLs",
   "type": "module",
   "main": "dist/index.js",
@@ -26,7 +26,10 @@
     "prepublishOnly": "npm run build",
     "docker:build": "docker build -t mcp/pdfgenstudio:latest -t mcp/pdfgenstudio:1.0.3 .",
     "docker:push": "echo 'Docker MCP images are built by Docker Inc. Submit your repo to the MCP catalog.'",
-    "docker:run": "docker run -i --rm -e PDFGENSTUDIO_API_KEY mcp/pdfgenstudio:latest"
+    "docker:run": "docker run -it --rm -e PDFGENSTUDIO_API_KEY mcp/pdfgenstudio:latest",
+    "docker:run:http": "docker run -it --rm -p 3100:3100 -e PDFGENSTUDIO_API_KEY mcp/pdfgenstudio:latest node dist/index.js --transport http --port 3100",
+    "docker:compose": "docker-compose up -d pdfgenstudio-mcp",
+    "docker:compose:http": "docker-compose --profile http up -d pdfgenstudio-mcp-http"
   },
   "keywords": [
     "mcp",

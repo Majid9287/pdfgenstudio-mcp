@@ -8,7 +8,7 @@
   "documentation": "https://docs.pdfgenstudio.com",
   "repository": "https://github.com/Majid9287/pdfgenstudio-mcp",
   "license": "MIT",
-  "icon": "https://github.com/Majid9287/pdfgenstudio-mcp/raw/main/img/pdfgenstudio.svg",
+  "icon": "https://github.com/Majid9287/pdfgenstudio-mcp/blob/main/img/pdfgenstudio.svg",
   "categories": ["productivity", "documents", "pdf", "ai"],
   "keywords": [
     "pdf",

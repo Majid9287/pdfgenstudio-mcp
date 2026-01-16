@@ -44,7 +44,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install production dependencies only
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
@@ -56,4 +56,5 @@ ENV NODE_ENV=production
 EXPOSE 3100
 
 # Default command - run in stdio mode for MCP compatibility
-ENTRYPOINT ["node", "dist/index.js"]
+# Use CMD instead of ENTRYPOINT to allow easy override
+CMD ["node", "dist/index.js", "--transport", "stdio"]
